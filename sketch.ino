@@ -20,7 +20,7 @@ void setup() {
     Serial.println("No devices found.");
   } else {
     Serial.println("Device found.");
-    display.setBrightness(0x0f, true); // Maximum brightness
+    display.setBrightness(0x0f, true); 
   }
 }
 
@@ -36,11 +36,10 @@ void loop() {
     Serial.print(temperature);
     Serial.println(" °C");
     
-    // Convert the float temperature to an integer to display on the TM1637
-    int tempToDisplay = (int)temperature;  // Truncate the decimal part
+    int tempToDisplay = (int)temperature; 
     
-    display.showNumberDec(tempToDisplay, true, 4, 0); // Display integer part only
+    display.showNumberDec(tempToDisplay, true, 4, 0); 
   }
   
-  delay(5000); // Wait for 5 seconds before taking another reading
+  delay(5000);
 }
